@@ -1,19 +1,19 @@
 # WalletVerifyDemo
 
-####Init
+#### Init
 ```
 git clone git@github.com:nieben/WalletVerifyDemo.git
 cd WalletVerifyDemo
 go mod tidy
 ```
 
-####Start Server: 
+#### Start Server: 
 ```
-go build -o WalletVerifyDemo main.go
+go build
 WalletVerifyDemo
 ```
 
-####Start Client: 
+#### Start Client: 
 ```
-go run client.go
+go run client/client.go
 ```
