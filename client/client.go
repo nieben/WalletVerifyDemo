@@ -11,19 +11,29 @@ import (
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
 const (
-	testBaseUrl      = "http://127.0.0.1:1323"
-	defaultHexPrvkey = "19ea515793137c8ef6402767d3226574808a2309903d47ba683c9ea30a92fa38"
-	defaultAddress   = "0x44c9e15458514ee416365c4DbCF98E4A2259406e"
+	defaultHexPrvkey = "19ea515793137c8ef6402767d3226574808a2309903d47ba683c9ea30a92fa38" // sample private key
+	defaultAddress   = "0x44c9e15458514ee416365c4DbCF98E4A2259406e"                       // sample address related to sample private key
 	//defaultAddress = "0x0000000000000000000000000000000000000000"  // invalidAddress
 )
 
 var (
-	testOption int
+	testOption  int
+	testBaseUrl = "http://127.0.0.1:" + getServePort()
 )
+
+func getServePort() string {
+	port := os.Getenv("WALLET_VERIFY_PORT")
+	if port == "" {
+		port = "1323"
+	}
+
+	return port
+}
 
 func main() {
 	var prvkey *ecdsa.PrivateKey
