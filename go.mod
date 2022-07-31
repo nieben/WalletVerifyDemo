@@ -6,7 +6,7 @@ require (
 	github.com/ethereum/go-ethereum v1.10.21
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/labstack/echo/v4 v4.7.2
-	github.com/nieben/is-owner v0.0.0-20220730125410-9338d32ca0d3
+	github.com/nieben/is-owner v0.0.0-20220731000321-821665516fb9
 )
 
 require (
