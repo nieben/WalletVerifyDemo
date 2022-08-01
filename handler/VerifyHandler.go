@@ -39,7 +39,7 @@ func (h *VerifyHandler) Verify(c echo.Context) error {
 	rt, err := isOwnerEth.Verify(r.Address, msg, signedMsg)
 	if err != nil {
 		c.Logger().Errorf("VerifyHandler Verify err: %s", err.Error())
-		return echo.NewHTTPError(http.StatusInternalServerError, "server error")
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
 	return c.JSON(http.StatusOK, types.VerifyResponse{Verified: rt})
